@@ -9,6 +9,9 @@ import java.awt.Graphics;
  */
 public class Cenario {
 
+        //Pontuação
+        private int contador;
+
 	/*
 	 * Constantes, cada constante representa um elemento do cenário
 	*/
@@ -31,10 +34,19 @@ public class Cenario {
 			{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
 			{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
 			{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-			{1,0,0,1,1,0,0,0,0,0,0,0,0,0,0,1,1,0,0,1},
 			{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
 			{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-			{1,0,0,1,1,0,0,0,0,0,0,0,0,0,0,1,1,0,0,1},
+			{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+			{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+			{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+			{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+			{1,1,0,1,0,1,0,1,0,1,1,0,1,0,1,0,1,0,1,1},
+			{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+			{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+			{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+			{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+			{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+			{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
 			{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
 			{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
 			{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
@@ -64,7 +76,7 @@ public class Cenario {
 	 */
 	public void desenha(Graphics g) {
 		g.setColor(Color.black); //pincel é preto
-		for(int i = 0; i < 10; i++ ){
+		for(int i = 0; i < 19; i++ ){
 			for(int j = 0; j < 20; j++){
 				if(this.matriz[i][j] == Cenario.MURO){
 					g.fillRect(j*20, i*20, 20, 20); //Pinta todos os muros
@@ -78,7 +90,14 @@ public class Cenario {
 
 	public void sorteiaSemente() {
 		do {
-			this.semente = new Ponto(Util.random(20),Util.random(10));
+			this.semente = new Ponto(Util.random(20),Util.random(20));
 		}while(this.ehMuro(this.semente)); //Enquanto o ponto sorteado for muro, continua sorteando.
+                this.contador = contador+1;
+
 	}
+
+
+        public int getContador(){
+            return contador;
+        }
 }

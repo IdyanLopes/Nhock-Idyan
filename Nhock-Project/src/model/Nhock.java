@@ -13,6 +13,7 @@ public class Nhock {
 	static final int ESQUERDA = 2;
 	static final int CIMA = 3;
 	static final int BAIXO = 4;
+        
 
 	//O corpo é uma lista de pontos do Nhock. Sempre que ele se alimenta da um seed ele ganha um novo ponto no corpo.
 	ArrayList<Ponto> corpo;
@@ -104,6 +105,7 @@ public class Nhock {
 	 */
 	public void addPonto(){
 		this.addPonto = true;
+                
 	}
 
 	//Desenha o Nhock
@@ -130,5 +132,9 @@ public class Nhock {
 		}
 		return false;
 	}
+
+
+
+        
 
 }

@@ -12,7 +12,12 @@ import view.PainelCenario;
  */
 public class NhockGame {
 
-	//Modelo
+	//Pontuação
+        Cenario contador = new Cenario();
+        private int pontuacao = contador.getContador();
+
+
+        //Modelo
 	Cenario cenario;
 	Nhock nhock;
 
@@ -43,7 +48,7 @@ public class NhockGame {
 
 	public void init(){
 		while(true){		
-			Util.sleep(180); //Põe o programa pra dormir por um tempo - mude akqui para aumentar ou diminuir a velocidade.
+			Util.sleep(160); //Põe o programa pra dormir por um tempo - mude akqui para aumentar ou diminuir a velocidade.
 
 			//Pega eventos
 			if(joystick.direitaPressionada()){ this.nhock.turnDIREITA(); }
@@ -58,13 +63,13 @@ public class NhockGame {
 
 			//nhock bate no muro
 			if(this.cenario.ehMuro(this.nhock.getCabeca())){
-				JOptionPane.showMessageDialog(this.janela, "Você perdeu brow. Não viu a parede?");
+                                JOptionPane.showMessageDialog(this.janela, "Perdeu otario!  Pontos: " + this.pontuacao);
 				System.exit(0);
 			}
 
 			//nhock bate nele mesmo
 			if(this.nhock.temColisao()){
-				JOptionPane.showMessageDialog(this.janela, "Você perdeu brow, tá achando que pode fazer raio-x em você mesmo?.!!");
+				JOptionPane.showMessageDialog(this.janela, "Perdeu otario! Tentando da ré no kibe?  Pontos: " + this.pontuacao);
 				System.exit(0);
 			}
 

@@ -7,7 +7,7 @@ import javax.swing.JFrame;
 public class JanelaPrincipal extends JFrame{
 	public JanelaPrincipal(){
 		super("Nhock Game - Preparado para o desafio?");
-		this.setSize(420, 230);
+		this.setSize(415, 415);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 }
