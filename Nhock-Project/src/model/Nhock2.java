@@ -7,12 +7,12 @@ import java.util.ArrayList;
  * Responsablidade da Classe: Gerencia o Nhock. A Minhoca que passa o jogo inteiro indo atrás das sementes.
  * Agradecimentos especiais à Suélen Rebello pelo nome do Jogo.
  */
-public class Nhock {
+public class Nhock2 {
 	//Constantes de Direação
-	static final int DIREITA = 1;
-	static final int ESQUERDA = 2;
-	static final int CIMA = 3;
-	static final int BAIXO = 4;
+	static final int DIREITA2 = 1;
+	static final int ESQUERDA2 = 2;
+	static final int CIMA2 = 3;
+	static final int BAIXO2 = 4;
         private int contador;
         
 
@@ -26,9 +26,9 @@ public class Nhock {
 	boolean addPonto = false;
 
 	//Cria o corpo do Nhock.
-	public Nhock(){
+	public Nhock2(){
 		this.corpo = new ArrayList<Ponto>();
-		this.corpo.add(new Ponto(11,5));
+		this.corpo.add(new Ponto(9,5));
 	}
 
 	public Ponto getCabeca(){
@@ -43,17 +43,17 @@ public class Nhock {
 		return this.corpo;
 	}
 
-	public void turnDIREITA(){
-		this.direcao = Nhock.DIREITA;
+	public void turnDIREITA2(){
+		this.direcao = Nhock2.DIREITA2;
 	}
-	public void turnESQUERDA(){
-		this.direcao = Nhock.ESQUERDA;
+	public void turnESQUERDA2(){
+		this.direcao = Nhock2.ESQUERDA2;
 	}
-	public void turnCIMA(){
-		this.direcao = Nhock.CIMA;
+	public void turnCIMA2(){
+		this.direcao = Nhock2.CIMA2;
 	}
-	public void turnBAIXO(){
-		this.direcao = Nhock.BAIXO;
+	public void turnBAIXO2(){
+		this.direcao = Nhock2.BAIXO2;
 	}
 
 	public void step(){
@@ -78,16 +78,16 @@ public class Nhock {
 
 		//Movimenta a cabeça da cobra na direção correta
 		switch(this.direcao){
-			case Nhock.BAIXO :
+			case Nhock2.BAIXO2 :
 				this.getCabeca().upY();
 				break;
-			case Nhock.CIMA:
+			case Nhock2.CIMA2:
 				this.getCabeca().downY();
 				break;
-			case Nhock.ESQUERDA:
+			case Nhock2.ESQUERDA2:
 				this.getCabeca().downX();
 				break;
-			case Nhock.DIREITA:
+			case Nhock2.DIREITA2:
 				this.getCabeca().upX();
 				break;
 		}
@@ -112,7 +112,7 @@ public class Nhock {
 
 	//Desenha o Nhock
 	public void desenha(Graphics g) {
-		g.setColor(Color.green);
+		g.setColor(Color.red);
 		for(Ponto p : this.corpo){
 			g.fillOval(p.getX()*20, p.getY()*20, 20, 20);
 		}

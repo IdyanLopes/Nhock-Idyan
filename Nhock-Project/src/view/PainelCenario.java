@@ -5,6 +5,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 import model.Cenario;
 import model.Nhock;
+import model.Nhock2;
 
 /**
  * Responsabilidade da Classe: Gerencia e desenha os elementos do jogo.
@@ -13,14 +14,16 @@ public class PainelCenario extends Canvas{
 
 	Cenario cenario;
 	Nhock nhock;
+        Nhock2 nhock2;
 
 	//Constrói painel Cenário.
 	//O painel é sempre composto por estes dois objetos que devem ser enviados do NhockGame.
 	//Lembre-se: Só pode existir apenas um objeto nhock e um objeto cenário no jogo inteiro.
-	public PainelCenario(Cenario cenario, Nhock nhock){
+	public PainelCenario(Cenario cenario, Nhock nhock, Nhock2 nhock2){
 		this.cenario = cenario;
 		this.nhock = nhock;
-
+                this.nhock2 = nhock2;
+                
 		this.setSize(400,200);
 
 		this.setIgnoreRepaint(true);
@@ -43,7 +46,8 @@ public class PainelCenario extends Canvas{
 
 		this.cenario.desenha(g2);
 		this.nhock.desenha(g2);
-
+                this.nhock2.desenha(g2);
+                
 		//Liberamos os contextos criados.
 		g.dispose();
 		g2.dispose();

@@ -1,5 +1,4 @@
 package view;
-
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
@@ -12,6 +11,7 @@ public class Joystick implements KeyListener {
 	static final int ESQUERDA = 2;
 	static final int CIMA = 3;
 	static final int BAIXO = 4;
+      
 
 	private int teclaPressionada = 0;
 
@@ -19,7 +19,8 @@ public class Joystick implements KeyListener {
 	public boolean esquerdaPressionada(){ return teclaPressionada == ESQUERDA;}
 	public boolean cimaPressionada(){ return teclaPressionada == CIMA;}
 	public boolean baixoPressionada(){ return teclaPressionada == BAIXO;}
-
+        
+        
 	public void keyPressed(KeyEvent e) {
 		switch(e.getKeyCode()){
 			case KeyEvent.VK_RIGHT:
@@ -34,6 +35,8 @@ public class Joystick implements KeyListener {
 			case KeyEvent.VK_DOWN:
 				teclaPressionada = BAIXO;
 				break;
+                            
+                       
 		}
 	}
 

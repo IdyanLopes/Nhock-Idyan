@@ -18,6 +18,7 @@ public class Cenario {
 	static int VAZIO = 0;
 	static int MURO = 1;
 	static int NHOCK = 2;
+        static int NHOCK2 = 3;
 
 	//A Matriz é um vetor bidimensional que armazena todos os blocos da tela do jogador.
 	private int[][] matriz;
@@ -67,7 +68,8 @@ public class Cenario {
 	 * Verifica se um determinado ponto do cenário é uma semente
 	 */
 	public boolean ehSemente(Ponto p){
-		return this.semente.equals(p);
+            this.contador = contador+1;
+            return this.semente.equals(p);
 	}
 
 	/**
@@ -90,9 +92,9 @@ public class Cenario {
 
 	public void sorteiaSemente() {
 		do {
-			this.semente = new Ponto(Util.random(20),Util.random(20));
+			this.semente = new Ponto(Util.random(20),Util.random(19));
 		}while(this.ehMuro(this.semente)); //Enquanto o ponto sorteado for muro, continua sorteando.
-                this.contador = contador+1;
+                
 
 	}
 
